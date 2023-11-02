@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2017 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/page3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/mess"/>
+
+
+
+    <TextView
+        android:id="@+id/mess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's Complete Your Profile"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/mess2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:textStyle="bold"
+        />
+
+    <TextView
+    android:id="@+id/mess2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="It will help us to know more about you"
+    android:textSize="12sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/mess"
+    app:layout_constraintBottom_toTopOf="@+id/gender"
+    />
+
+
+        <LinearLayout
+            android:id="@+id/gender"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mess2"
+            app:layout_constraintBottom_toTopOf="@+id/name"
+            android:background="@drawable/rounded_field"
+            >
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Gender: "
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/pgender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                >
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+            </RadioGroup>
+        </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_field"
+        android:hint="Your Name"
+        android:inputType="textAutoComplete"
+        android:minHeight="48dp"
+        android:paddingStart="20dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/weight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    <LinearLayout
+        android:id="@+id/weight"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintBottom_toTopOf="@+id/height">
+
+        <EditText
+            android:id="@+id/edit_word"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_field"
+            android:hint="Your Weight"
+            android:inputType="textAutoComplete"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="18sp"
+           />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:padding="13dp"
+            android:background="@drawable/round_corner"
+            android:text="KG"
+            android:textSize="18sp"
+            android:textColor="@color/box"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/height"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight"
+        app:layout_constraintBottom_toTopOf="@+id/goals">
+
+        <EditText
+            android:id="@+id/edit_word2"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_field"
+            android:hint="Your Height"
+            android:inputType="textAutoComplete"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/round_corner"
+            android:text="CM"
+            android:textSize="18sp"
+            android:textColor="@color/box"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/goals"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_field"
+        android:paddingStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height"
+        app:layout_constraintBottom_toTopOf="@+id/button_save"
+        >
+
+        <TextView
+            android:paddingTop="5dp"
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fitness Goal "
+            android:textAllCaps="false"
+            android:textSize="18sp"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/gainmuscle"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Gain Muscle" />
+
+            <CheckBox
+                android:id="@+id/leanandtone"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Lean and Tone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/endurance"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Endurance" />
+
+            <CheckBox
+                android:id="@+id/loosefat"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Loose Fat" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:text="@string/button_save"
+        android:textColor="@color/box"
+        app:backgroundTint="@color/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goals"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
