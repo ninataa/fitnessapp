@@ -74,12 +74,6 @@ class PersonalPlan : AppCompatActivity() {
     fun deleteFavExercise(exercise: FavExercise) {
         groupList = mutableListOf<FavExercise>()
         favExerciseViewModel.removeExercises(exercise.ename)
-
-        Toast.makeText(
-            applicationContext,
-            "Exercise has been removed from your plan",
-            Toast.LENGTH_LONG
-        ).show()
     }
 
     fun exerciseDetail(exercise: FavExercise) {
