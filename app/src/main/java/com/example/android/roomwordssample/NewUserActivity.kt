@@ -32,7 +32,7 @@ import androidx.appcompat.app.AppCompatActivity
  * Activity for entering a word.
  */
 
-class NewWordActivity : AppCompatActivity() {
+class NewUserActivity : AppCompatActivity() {
 
     private val userViewModel: UserViewModel by viewModels {
         UserViewModelFactory((application as Application).repository)
@@ -91,7 +91,7 @@ class NewWordActivity : AppCompatActivity() {
                     looseFat.isChecked
                 )
                 userViewModel.insert(user)
-                val intent = Intent(this@NewWordActivity, StartNowActivity::class.java)
+                val intent = Intent(this@NewUserActivity, StartNowActivity::class.java)
                 startActivity(intent)
             }
         }
