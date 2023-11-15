@@ -19,7 +19,6 @@ package com.example.android.roomwordssample
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
@@ -39,11 +38,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        var setUp = true
-
         userViewModel.allWords.observe(owner = this) {
             words ->
-            setUp = words.isNotEmpty()
+//            wordViewModel.delete()
         }
 
         favExerciseViewModel.allExercises.observe(owner = this) {
@@ -58,23 +55,25 @@ class MainActivity : AppCompatActivity() {
 
         val start = findViewById<Button>(R.id.button)
         start.setOnClickListener {
-            if(setUp) {
-                val intent = Intent(this@MainActivity, StartNowActivity::class.java)
-                startActivity(intent)
-            }
-            else
-            {
-                val intent = Intent(this@MainActivity, NewUserActivity::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(this@MainActivity, NewWordActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    override fun onBackPressed() {
-        Toast.makeText(
-            applicationContext,
-            "Click to get started!",
-            Toast.LENGTH_LONG
-        ).show()
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, intentData)
+//
+//        if (requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK) {
+//           intentData?.getParcelableExtra<PersonalInformation>(NewWordActivity.EXTRA_REPLY)?.let { reply ->
+//                val word = Word(reply.weight, reply.height)
+//                wordViewModel.insert(word)
+//            }
+//        } else {
+//            Toast.makeText(
+//                applicationContext,
+//                R.string.empty_not_saved,
+//                Toast.LENGTH_LONG
+//            ).show()
+//        }
+//    }
 }
